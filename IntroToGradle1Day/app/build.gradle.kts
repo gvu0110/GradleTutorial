@@ -32,7 +32,10 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
     // This dependency is used by the application.
-    implementation("com.google.guava:guava:30.0-jre")
+    // Use strict version
+    implementation("com.google.guava:guava:26.0-jre!!")
+
+    runtimeOnly("com.google.inject:guice:4.2.3")
 
     // Use the Kotlin test library.
     testImplementation("org.jetbrains.kotlin:kotlin-test")

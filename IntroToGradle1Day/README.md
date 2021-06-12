@@ -22,3 +22,13 @@
 - Find it in `app/build/distributions/`. The file name should include the version number
 4. Configure the `jar` task to add an entry named `Implementation-Version` to the far manifest. Set the entry's value to the project version.
 5. Configure the `test` task to run tests in parallel (use the `maxParallelForks` setting).
+
+
+### Part 3:
+1. Execute `./gradlew :app:dependencies --configuration compileClasspath`
+2. In `app/build.gradle.kts`: Add an `implementation` dependency to `com.google.inject:guice:4.2.3` 
+3. Execute `./gradlew :app:dependencies --configuration compileClasspath` again. Can you see the Guava conflict?
+4. Change the Guava version in your build to `26.0-jre`. The version `27.1-jre` will be selected
+5. Change the Guice dependency to `runtimeOnly`. Compare the `compileClasspath` and the `runtimeClasspath`. Check the selected Guava versions.
+6. Run `./gradlew :app:dependencies --scan` and explore the results in the "Dependencies" tab of the build scan.
+7. Enforce the selection of Guava `26.0-jre` (use a strict version). The `26.0-jre` selected in both `compileClasspath` and the `runtimeClasspath`

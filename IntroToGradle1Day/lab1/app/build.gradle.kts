@@ -46,7 +46,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass.set("lab.AppKt")
+    mainClass.set("lab1.AppKt")
 }
 
 // Kotlin DSL:

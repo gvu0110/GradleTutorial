@@ -1,5 +1,6 @@
 # IntroToGradle1Day
 
+## Lab 1
 ### Part 1
 1. Run `gradle init`
 - Select project type - `2: application`
